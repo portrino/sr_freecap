@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://typo3.org/ns/SJBR/SrFreecap/ViewHelpers"><xsd:element name="audio"><xsd:annotation><xsd:documentation><![CDATA[]]></xsd:documentation></xsd:annotation><xsd:complexType mixed="true"><xsd:sequence><xsd:any minOccurs="0" maxOccurs="unbounded"/></xsd:sequence><xsd:attribute type="xsd:string" name="additionalAttributes"><xsd:annotation><xsd:documentation><![CDATA[Additional tag attributes. They will be added directly to the resulting HTML tag.]]></xsd:documentation></xsd:annotation></xsd:attribute><xsd:attribute type="xsd:string" name="data"><xsd:annotation><xsd:documentation><![CDATA[Additional data-* attributes. They will each be added with a "data-" prefix.]]></xsd:documentation></xsd:annotation></xsd:attribute><xsd:attribute type="xsd:string" name="suffix"><xsd:annotation><xsd:documentation><![CDATA[]]></xsd:documentation></xsd:annotation></xsd:attribute></xsd:complexType></xsd:element><xsd:element name="image"><xsd:annotation><xsd:documentation><![CDATA[]]></xsd:documentation></xsd:annotation><xsd:complexType mixed="true"><xsd:sequence><xsd:any minOccurs="0" maxOccurs="unbounded"/></xsd:sequence><xsd:attribute type="xsd:string" name="additionalAttributes"><xsd:annotation><xsd:documentation><![CDATA[Additional tag attributes. They will be added directly to the resulting HTML tag.]]></xsd:documentation></xsd:annotation></xsd:attribute><xsd:attribute type="xsd:string" name="data"><xsd:annotation><xsd:documentation><![CDATA[Additional data-* attributes. They will each be added with a "data-" prefix.]]></xsd:documentation></xsd:annotation></xsd:attribute><xsd:attribute type="xsd:string" name="suffix"><xsd:annotation><xsd:documentation><![CDATA[]]></xsd:documentation></xsd:annotation></xsd:attribute></xsd:complexType></xsd:element><xsd:element name="translate"><xsd:annotation><xsd:documentation><![CDATA[Translate a key from locallang. The files are loaded from the folder
+ "Resources/Private/Language/".
+
+ Handle salutation suffixes
+
+ == Examples ==
+
+ <code title="Translate key">
+ <f:translate key="key1" />
+ </code>
+ <output>
+ // value of key "key1" in the current website language
+ </output>
+
+ <code title="Keep HTML tags">
+ <f:translate key="htmlKey" htmlEscape="false" />
+ </code>
+ <output>
+ // value of key "htmlKey" in the current website language, no htmlspecialchars applied
+ </output>
+
+ <code title="Translate key from custom locallang file">
+ <f:translate key="LLL:EXT:myext/Resources/Private/Language/locallang.xml:key1" />
+ </code>
+ <output>
+ // value of key "key1" in the current website language
+ </output>
+
+ <code title="Inline notation with arguments and default value">
+ {f:translate(key: 'argumentsKey', arguments: {0: 'dog', 1: 'fox'}, default: 'default value')}
+ </code>
+ <output>
+ // value of key "argumentsKey" in the current website language
+ // with "%1" and "%2" are replaced by "dog" and "fox" (printf)
+ // if the key is not found, the output is "default value"
+ </output>]]></xsd:documentation></xsd:annotation><xsd:complexType mixed="true"><xsd:sequence><xsd:any minOccurs="0" maxOccurs="unbounded"/></xsd:sequence><xsd:attribute type="xsd:string" name="key" use="required"><xsd:annotation><xsd:documentation><![CDATA[]]></xsd:documentation></xsd:annotation></xsd:attribute><xsd:attribute type="xsd:string" name="default"><xsd:annotation><xsd:documentation><![CDATA[]]></xsd:documentation></xsd:annotation></xsd:attribute><xsd:attribute type="xsd:string" name="htmlEscape"><xsd:annotation><xsd:documentation><![CDATA[]]></xsd:documentation></xsd:annotation></xsd:attribute><xsd:attribute type="xsd:string" name="arguments"><xsd:annotation><xsd:documentation><![CDATA[]]></xsd:documentation></xsd:annotation></xsd:attribute></xsd:complexType></xsd:element></xsd:schema>
